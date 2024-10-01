@@ -1,49 +1,33 @@
-// User.java
-@Entity
+package Class;
+
 public class User {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private int userID;
     private String username;
-    private String password; // Store securely
-    private String role; // "ADMIN" or "CUSTOMER"
-    // Getters and Setters
-}
+    private String password;
+    private String role;
+    private String contactInfo;
 
-// Product.java
-@Entity
-public class Product {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private String name;
-    private String description;
-    private double price;
-    private int stock;
-    // Getters and Setters
-}
+    public User(int userID, String username, String password, String role, String contactInfo) {
+        this.userID = userID;
+        this.username = username;
+        this.password = password;
+        this.role = role;
+        this.contactInfo = contactInfo;
+    }
 
-// Order.java
-@Entity
-public class Order {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private Long userId;
-    private LocalDate orderDate;
-    private String status; // "PENDING", "COMPLETED", "CANCELLED"
     // Getters and Setters
-}
+    public int getUserID() { return userID; }
+    public void setUserID(int userID) { this.userID = userID; }
 
-// OrderItem.java
-@Entity
-public class OrderItem {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private Long orderId;
-    private Long productId;
-    private int quantity;
-    private double price; // price at the time of purchase
-    // Getters and Setters
+    public String getUsername() { return username; }
+    public void setUsername(String username) { this.username = username; }
+
+    public String getPassword() { return password; }
+    public void setPassword(String password) { this.password = password; }
+
+    public String getRole() { return role; }
+    public void setRole(String role) { this.role = role; }
+
+    public String getContactInfo() { return contactInfo; }
+    public void setContactInfo(String contactInfo) { this.contactInfo = contactInfo; }
 }
